@@ -1,6 +1,7 @@
 package com.blackjack.domain;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class CardDeck {
@@ -14,15 +15,14 @@ public class CardDeck {
 	}
 
 	private List<Card> generateCards(){
-		cards = new ArrayList<>();
+		cards = new LinkedList<>();
 		
 		for(String pattern : PATTERNS) {
 			for(int i=1; i<=CARD_COUNT; i++) {
-				Card card = new Card();
 				String denomination = this.numberToDenomination(i);
 				
-				card.setDenomination(denomination);
-				card.setPattern(pattern);
+				Card card = new Card(pattern, denomination);
+				
 				cards.add(card);
 			}
 		}
@@ -43,6 +43,18 @@ public class CardDeck {
 		}
 		
 		return String.valueOf(number);
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		
+		for(Card card: cards) {
+			sb.append(card.toString());
+			sb.append("\n");
+		}
+		
+		return sb.toString();
 	}
 	
 }
