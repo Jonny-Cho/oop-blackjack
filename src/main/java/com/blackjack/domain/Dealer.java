@@ -20,21 +20,21 @@ public class Dealer implements Player{
 		}
 	}
 	
+	private int getPointSum() {
+		int sum = 0;
+		for(Card card : cards) {
+			sum += card.getDenomination().getPoint();
+		}
+		
+		return sum;
+	}
+	
 	public Dealer() {
 		cards = new ArrayList<>();
 	}
 	
 	private boolean isReceiveCard() {
 		return getPointSum() <= CAN_RECEIVE_POINT;
-	}
-
-	private int getPointSum() {
-		int sum = 0;
-		for(Card card : cards) {
-			sum += card.getPoint();
-		}
-		
-		return sum;
 	}
 
 	@Override

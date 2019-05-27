@@ -8,18 +8,16 @@ import com.blackjack.domain.Card;
 public class CardDeck {
 	private List<Card> cards;
 	
-	private static final int CARD_COUNT = 13;
-	
 	public CardDeck() {
-		this.generateCards();
+		cards = this.generateCards();
 	}
 
 	private List<Card> generateCards(){
-		cards = new LinkedList<>();
+		List<Card> cards = new LinkedList<>();
 		
 		for(Card.Pattern pattern : Card.Pattern.values()) {
-			for(int i=1; i<=CARD_COUNT; i++) {
-				Card card = new Card(pattern, i);
+			for(Card.Denomination denomination : Card.Denomination.values()) {
+				Card card = new Card(pattern, denomination);
 				cards.add(card);
 			}
 		}
@@ -27,6 +25,10 @@ public class CardDeck {
 		return cards;
 	}
 
+	public List<Card> getCards() {
+		return cards;
+	}
+	
 	public Card draw() {
 		Card selectedCard = getRandomCard();
 		cards.remove(selectedCard);
@@ -39,11 +41,6 @@ public class CardDeck {
 		return cards.get(select);
 	}
 	
-	
-	public List<Card> getCards() {
-		return cards;
-	}
-
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
