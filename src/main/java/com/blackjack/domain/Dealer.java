@@ -1,5 +1,6 @@
 package com.blackjack.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Dealer implements Player{
@@ -7,6 +8,7 @@ public class Dealer implements Player{
 	private boolean turn;
 	
 	private static final int CAN_RECEIVE_POINT = 16;
+	private static final String NAME = "딜러";
 	
 	@Override
 	public void receiveCard(Card card) {
@@ -16,6 +18,10 @@ public class Dealer implements Player{
 		} else {
 			System.out.println("카드의 총 합이 17이상입니다. 더이상 카드를 받을 수 없습니다.");
 		}
+	}
+	
+	public Dealer() {
+		cards = new ArrayList<>();
 	}
 	
 	private boolean isReceiveCard() {
@@ -66,5 +72,10 @@ public class Dealer implements Player{
 	
 	private void setTurn(boolean turn) {
 		this.turn = turn;
+	}
+
+	@Override
+	public String getName() {
+		return NAME;
 	}
 }
