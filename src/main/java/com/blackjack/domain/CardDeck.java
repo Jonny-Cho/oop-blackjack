@@ -3,10 +3,11 @@ package com.blackjack.domain;
 import java.util.LinkedList;
 import java.util.List;
 
+import com.blackjack.domain.Card;
+
 public class CardDeck {
 	private List<Card> cards;
 	
-	private static final String[] PATTERNS = {"spade", "heart", "diamond", "club"};
 	private static final int CARD_COUNT = 13;
 	
 	public CardDeck() {
@@ -16,7 +17,7 @@ public class CardDeck {
 	private List<Card> generateCards(){
 		cards = new LinkedList<>();
 		
-		for(String pattern : PATTERNS) {
+		for(Card.Pattern pattern : Card.Pattern.values()) {
 			for(int i=1; i<=CARD_COUNT; i++) {
 				Card card = new Card(pattern, i);
 				cards.add(card);
@@ -25,7 +26,6 @@ public class CardDeck {
 		
 		return cards;
 	}
-	
 
 	public Card draw() {
 		Card selectedCard = getRandomCard();
