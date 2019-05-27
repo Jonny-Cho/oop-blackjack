@@ -1,5 +1,6 @@
 package com.blackjack.main;
 
+import com.blackjack.domain.Card;
 import com.blackjack.domain.CardDeck;
 import com.blackjack.domain.Dealer;
 import com.blackjack.domain.Gamer;
@@ -12,5 +13,7 @@ public class Game {
 		Gamer gamer = new Gamer();
 		Rule rule = new Rule();
 		CardDeck cardDeck = new CardDeck();
+		
+//		Card card = cardDeck.draw();
 	}
 }
