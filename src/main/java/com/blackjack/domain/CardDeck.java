@@ -39,6 +39,11 @@ public class CardDeck {
 		return cards.get(select);
 	}
 	
+	
+	public List<Card> getCards() {
+		return cards;
+	}
+
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();

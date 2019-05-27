@@ -5,4 +5,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>oop-blackjack</name>
   <description>Project to learn OOP with black jack game</description>
+  
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/junit/junit -->
+	<dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.12</version>
+	    <scope>test</scope>
+	</dependency>
+  </dependencies>
 </project>
