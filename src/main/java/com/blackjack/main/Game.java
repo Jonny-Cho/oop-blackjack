@@ -1,5 +1,6 @@
 package com.blackjack.main;
 
+import com.blackjack.domain.Card;
 import com.blackjack.domain.CardDeck;
 import com.blackjack.domain.Dealer;
 import com.blackjack.domain.Gamer;
@@ -13,6 +14,7 @@ public class Game {
 		Rule rule = new Rule();
 		CardDeck cardDeck = new CardDeck();
 		
-		System.out.println(cardDeck.toString());
+		Card card = cardDeck.draw();
+		System.out.println(card.toString());
 	}
 }
